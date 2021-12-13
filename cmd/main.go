@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 
+	reddit "github.com/ElmanZ/reddit_bot"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 )
 
@@ -13,7 +14,7 @@ const webHook string = "https://ancient-forest-54212.herokuapp.com/"
 func main() {
 	port := os.Getenv("PORT")
 	botToken := os.Getenv("TOKEN")
-
+	reddit.Get("https://www.reddit.com/r/golang.json")
 	go func() {
 		log.Fatal(http.ListenAndServe(":"+port, nil))
 	}()
