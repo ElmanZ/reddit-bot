@@ -14,7 +14,7 @@ type Item struct {
 
 type Response struct {
 	Data struct {
-		Childern []struct {
+		Children []struct {
 			Data Item
 		}
 	}
@@ -52,7 +52,7 @@ func Get(reddit string) ([]string, error) {
 
 	//grabing values from response and appending them onto slice
 	var items []string
-	for _, child := range r.Data.Childern {
+	for _, child := range r.Data.Children {
 		items = append(items, "\nURL: ", child.Data.URL, "\nTitle: ", child.Data.Title, "\n")
 		//for logs
 		log.Printf("\nURL: %s, \nTitle: %s", child.Data.URL, child.Data.Title)
