@@ -62,6 +62,7 @@ func main() {
 			default:
 				msg.Text = "Please use valid command!"
 			}
+			bot.Send(msg)
 		}
 	}
 }
