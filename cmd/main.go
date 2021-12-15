@@ -25,7 +25,7 @@ func main() {
 		log.Fatal("An error has occured while creating a bot: ", err)
 	}
 	log.Println("Bot created successfully")
-	bot.Debug = true
+	//bot.Debug = true
 
 	log.Printf("Authorized on account %s", bot.Self.UserName)
 
