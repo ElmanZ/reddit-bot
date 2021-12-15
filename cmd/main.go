@@ -16,7 +16,7 @@ const webHook string = "https://elmans-reddit-bot.herokuapp.com/"
 func main() {
 	port := os.Getenv("PORT")
 	botToken := os.Getenv("TOKEN")
-	reddit.Get("https://www.reddit.com/r/golang.json")
+
 	go func() {
 		log.Fatal(http.ListenAndServe(":"+port, nil))
 	}()
