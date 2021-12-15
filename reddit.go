@@ -20,6 +20,11 @@ type Response struct {
 	}
 }
 
+const Best = "https://www.reddit.com/r/best"
+const Rising = "https://www.reddit.com/r/rising"
+const Random = "https://www.reddit.com/r/random"
+const SubReddit = "https://www.reddit.com/r/"
+
 func Get(reddit string) ([]string, error) {
 	req, err := http.NewRequest("GET", reddit, nil)
 	if err != nil {
