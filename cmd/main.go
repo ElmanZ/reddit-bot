@@ -52,13 +52,13 @@ func main() {
 			case "start":
 				msg.Text = "Welcome! This is a Reditt bot."
 			case "best":
-				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Best+".json&limit=10")), "[]")
+				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Best+".json?limit=10")), "[]")
 			case "rising":
-				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Rising+".json&limit=10")), "[]")
+				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Rising+".json?limit=10")), "[]")
 			case "random":
-				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Random+".json&limit=10")), "[]")
+				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Random+".json?limit=10")), "[]")
 			case "subreddit":
-				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.SubReddit+".json&limit=10")), "[]")
+				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.SubReddit+".json?limit=10")), "[]")
 			default:
 				msg.Text = "Please use valid command!"
 			}
