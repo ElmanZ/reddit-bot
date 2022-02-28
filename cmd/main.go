@@ -50,15 +50,15 @@ func main() {
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "")
 			switch update.Message.Command() {
 			case "start":
-				msg.Text = "Welcome! This is a Reditt bot."
+				msg.Text = "Welcome! This is a Reditt bot.\n /best - will return best subreddits \n /rising - will return rising subreddits \n /random will return random subreddits \n /subbredit + *name of the subbredit* - will return specified subbredit \n"
 			case "best":
-				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Best+".json?limit=10")), "[]")
+				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Best+".json?limit=5")), "[]")
 			case "rising":
-				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Rising+".json?limit=10")), "[]")
+				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Rising+".json?limit=5")), "[]")
 			case "random":
-				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Random+".json?limit=10")), "[]")
+				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Random+".json?limit=5")), "[]")
 			case "subreddit":
-				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.SubReddit+".json?limit=10")), "[]")
+				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.SubReddit+update.Message.CommandArguments()+".json?limit=5")), "[]")
 			default:
 				msg.Text = "Please use valid command!"
 			}
