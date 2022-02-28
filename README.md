@@ -21,10 +21,10 @@
 set up your bot using @BotFather
 git clone https://github.com/ElmanZ/reddit-bot.git
 cd go/src/github.com/<github username>/<project name>
+edit TOKEN values and webhook URL
 deploy using heroku
 ```
 
 ## Examples
-Find my bot on telegram searching @Elmans_Reddit_Bot
-<img src="img/Bot.png" width="200">
+* Find my bot on telegram searching @Elmans_Reddit_Bot
 ![Bot Img](img/Bot.png)
