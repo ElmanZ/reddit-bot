@@ -4,9 +4,8 @@
 
 ## Main learning points:
 
-* how to work with Telegram API
+* working with Telegram API
 * learning how to deploy a project to Heroku using heroku git
-* how to structure a Go project
 * how to work with Reddit API
 
 ## Dependencies:
@@ -18,7 +17,8 @@
 ## How To Satrt The Application
 
 ```bash 
-set up your bot using @BotFather
+get your bot credentials using @BotFather
+install git and heroku cli
 git clone https://github.com/ElmanZ/reddit-bot.git
 cd go/src/github.com/<github username>/<project name>
 edit TOKEN values and webhook URL
@@ -27,4 +27,5 @@ deploy using heroku
 
 ## Examples
 * Find my bot on telegram searching @Elmans_Reddit_Bot
+
 ![Bot Img](img/Bot.png)
