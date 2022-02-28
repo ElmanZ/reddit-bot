@@ -28,7 +28,7 @@ const SubReddit = "https://www.reddit.com/r/"
 func Get(reddit string) ([]string, error) {
 	req, err := http.NewRequest("GET", reddit, nil)
 	if err != nil {
-		return nil, err
+		log.Print(err)
 	}
 	client := &http.Client{}
 
@@ -36,18 +36,18 @@ func Get(reddit string) ([]string, error) {
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefox/88.0")
 	resp, err := client.Do(req)
 	if err != nil {
-		return nil, err
+		log.Print(err)
 	}
 
 	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
-		return nil, errors.New(resp.Status)
+		log.Print(errors.New(resp.Status))
 	}
 
 	r := new(Response)
 	err = json.NewDecoder(resp.Body).Decode(r)
 	if err != nil {
-		return nil, err
+		log.Print("Can't read file", err)
 	}
 
 	//grabing values from response and appending them onto slice
