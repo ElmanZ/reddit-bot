@@ -50,11 +50,11 @@ func main() {
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "")
 			switch update.Message.Command() {
 			case "start":
-				msg.Text = "Welcome! This is a Reditt bot.\n /best - will return best subreddits \n /rising - will return rising subreddits \n /random will return random subreddits \n /subbredit + *name of the subbredit* - will return specified subbredit \n"
+				msg.Text = "Welcome! This is a Reditt bot.\n /best - will return best subreddits \n /rising - will return rising subreddits \n /random - will return random subreddits \n /subbredit + *name of the subbredit* - will return specified subbredit \n"
 			case "best":
-				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Best+".json?limit=5")), "[]")
+				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Best+".json?limit=5")), "[]") //.trim works partially. fix!
 			case "rising":
-				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Rising+".json?limit=5")), "[]")
+				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Rising+".json?limit=5")), "[]") //limit is random must be 5 - fix!
 			case "random":
 				msg.Text = strings.Trim(fmt.Sprint(reddit.Get(reddit.Random+".json?limit=5")), "[]")
 			case "subreddit":
