@@ -14,7 +14,7 @@
 * github.com/technoweenie/multipartstreamer v1.0.1 // indirect
 
 
-## How To Satrt The Application
+## How To Start The Application
 
 ```bash 
 get your bot credentials using @BotFather
